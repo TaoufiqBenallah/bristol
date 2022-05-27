@@ -1,1402 +1,727 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-    <style>
+    <title>Trace Academia
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="date=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+    <style type="text/css">
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin: 0;
-        }
-
-        li a {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
+            margin: 0 !important;
+            padding: 0 !important
         }
 
         a {
-            text-decoration: none;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        p {
-            margin: 0;
-        }
-
-        .enhide {
-            visibility: hidden;
-            opacity: 0;
-            width: 0;
-            height: 0;
-
-        }
-
-        .header-style-desktop {
-            position: fixed;
-            padding: 25px 0;
-            width: 100%;
-            z-index: 1000;
-
-            background-color: white;
-
-        }
-
-        .header-container {
-            height: 69px;
-            padding: 0 50px;
-
-        }
-
-        .header-logo {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            width: 16.66666667%;
-        }
-
-        .header-container-menu {
-            display: flex;
-            height: 69px;
-
-
-        }
-
-        .header-nav-container {
-            width: 83.33333333%;
-            display: flex;
-            justify-content: right;
-            align-items: center;
-        }
-
-        .header-menu {
-            display: flex;
-        }
-
-        .head-menu {
-            margin: 0 2px;
-            background-size: 100% 200%;
-            background-image: linear-gradient(to top, #dfcd50 50%, #fff 50%);
-
-
-        }
-
-        .head-menu.active {
-            background-color: #dfcd50;
-            background-image: none;
-
-
-
-        }
-
-        .head-menu>a {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 15px;
-            font-size: 13px;
-            height: 30px;
-
-
-
-        }
-
-        .header-menu ul li a span {
-            color: #222;
-            font-size: 12px;
-
-        }
-
-        .head-menu:hover {
-            background-position: 0% 100%;
-            transition: all 300ms ease-out;
-
-
-
-
-
-        }
-
-        .header-menu li ul {
-            position: absolute;
-            text-align: left;
-            background-color: #222;
-            width: 160px;
-            padding: 20px;
-            visibility: hidden;
-            opacity: 0;
-
-        }
-
-        .header-menu li:hover ul {
-            display: block;
-            opacity: 100%;
-            visibility: visible;
-
-        }
-
-        .head-menu ul li a {
-            font-size: 14px;
-            color: white;
-
-
-        }
-
-        .head-menu ul li a:hover {
-
-            color: #dfcd50;
-
-
-        }
-
-        .header-basket-container {
-            text-align: center;
-
-        }
-
-        .header-basket {
-            margin: 0 10px 0 20px;
-
-        }
-
-        .header-basket-img {
-            position: relative;
-            display: inline-block;
-            width: 24px;
-            height: 36px;
-            background-image: url(https://i.imgur.com/b563EUW.png);
-            background-repeat: no-repeat;
-            background-position: top left;
-
-
-        }
-
-        .header-basket-img span {
-            font-size: 12px;
-            position: absolute;
-            display: block;
-            color: white;
-            right: -3px;
-            top: 15px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #dfcd50;
-        }
-
-        .header-basket-total p {
-            font-size: 12px;
-            margin: 0;
-
-
+            color: blue;
         }
 
 
-        .header-basket-total p span {
-            color: #dfcd50;
-            padding-left: 5px;
-
-
+        table {
+            border-collapse: collapse
         }
 
-        .header-login {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 30px;
-            margin: 0 0 0 5px;
-
-        }
-
-        .header-login-container {
-            vertical-align: middle;
-            font-size: 12px;
-            width: auto;
-        }
-
-        .header-login-container div span:hover {
-            color: #dfcd50;
-            cursor: pointer;
-        }
-
-
-        .icon-container {
-            width: 40px;
-            height: 45px;
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .icon-1 {
-            width: 40px;
-            height: 45px;
-
-            display: inline-block;
-            position: relative;
-        }
-
-        .icon-1 span {
-            display: block;
-            position: absolute;
-            width: 18px;
-            height: 2px;
-            background-color: #222;
-            top: 50%;
-            right: 0;
-
-            -moz-transition: all 150ms ease-out;
-            -o-transition: all 150ms ease-out;
-            -webkit-transition: all 150ms ease-out;
-            transition: all 150ms ease-out;
-            -ms-transition: all 150ms ease-out;
-
-
-        }
-
-        .icon-1 .line-1 {
-            transform: translate(0px, -6px);
-        }
-
-        .icon-1 .line-2 {
-            transform: translate(0px, 0px);
-        }
-
-        .icon-1 .line-3 {
-            transform: translate(0px, 6px);
-        }
-
-        .open-icon-1 .line-1 {
-            transform: translate(0px, 0px) rotate(45deg);
-        }
-
-        .open-icon-1 .line-3 {
-            transform: translate(0px, 0px)rotate(-45deg);
-        }
-
-        .open-icon-1 .line-2 {
-            width: 0px;
-        }
-
-        /* Slides */
-        .slide-control {
-            z-index: 999;
-            top: 53%;
-            left: 25px;
-            position: absolute;
-        }
-
-        .control {}
-
-        .control span {
-
-            background-color: #989898;
-            display: block;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            cursor: pointer;
-
-        }
-
-        .control span:hover {
-            background-color: #dfcd50;
-        }
-
-        .dot.active {
-            background-color: #dfcd50;
-        }
-
-        .block-based-images {
-            position: relative;
-            padding-left: 25px;
-            width: 58.33333333%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .block-based-images img {
-            width: 100%;
-        }
-
-        .banner-img-item-1 {
-
-            position: relative;
-            width: 23%;
-            top: 5%;
-
-        }
-
-        .banner-img-item-2 {
-            position: relative;
-            width: 15%;
-            top: 0;
-
-        }
-
-        .banner-img-item-3 {
-            position: relative;
-            width: 15%;
-            top: 5%;
-
-        }
-
-        .banner-img-item-4 {
-            position: relative;
-            width: 15%;
-            top: 7%;
-
-        }
-
-        .banner-img-item-5 {
-            box-sizing: border-box;
-            position: relative;
-            width: 24.5%;
-            top: 4%;
-
-        }
-
-        /*
-        .block-based-images{
-            padding-left: 25px;
-          width: 58.33333333% ; 
-             display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        */
-        .holder {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .slide.active {
-            width: 100%;
-            position: relative;
-
-        }
-
-        .wrap {
-            position: relative;
-            width: 400%;
-            display: flex;
-
-
-
-        }
-
-        .wrap.active1 {
-            right: 0%;
-            transition: all 0.5s ease-out;
-        }
-
-        .wrap.active2 {
-            right: 100%;
-            transition: all 0.5s ease-out;
-
-        }
-
-        .wrap.active3 {
-            right: 200%;
-            transition: all 0.5s ease-out;
-
-        }
-
-        .wrap.active4 {
-            right: 300%;
-            transition: all 0.5s ease-out;
-        }
-
-        .slide {
-            width: 100%;
-            position: relative;
-
-        }
-
-        @keyframes myslide {
-            0% {
-                right: 0;
-                opacity: 0;
-
-
+        @media only screen and (max-width:700px) {
+            .w-100p {
+                width: 100% !important
             }
 
-            100% {
-                right: 200%;
-                opacity: 1;
+            .w-92p {
+                width: 92% !important
+            }
 
+            .w-80p {
+                width: 80% !important
+            }
+
+            .w-50p {
+                width: 50% !important
+            }
+
+            .mobile-resp {
+                width: 100% !important;
+            }
+
+            .space-h-40 {
+                display: block !important;
+                padding-top: 40px !important;
+            }
+
+            .hero-bg {
+                background: url("https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/a01a3f72-4079-4b7c-a9a5-3e751e2e603a.jpeg") top center no-repeat #002a3a !important;
+                background-size: cover !important;
+                display: block !important;
+                width: 100% !important
+            }
+
+            .em_hide {
+                display: none !important;
+                width: 0px !important;
+                visibility: hidden !important;
+                height: 0px !important;
 
             }
 
         }
 
+        @media only screen and (max-width: 600px) {}
 
-        .banner-container {
-            margin: 0 135px;
-            padding: 0 15px;
-        }
+        @media only screen and (max-width: 500px) {}
 
-        .banner {
-            display: flex;
-        }
-
-        .block-based-text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 41.66666667%;
-            padding: 0 20px 0 15px;
-        }
-
-        .text-right {
-            padding: 20px o;
-        }
-
-        .text-right h1 {
-            margin: 10px 0;
-            font-size: 60px;
-            text-align: right;
-
-        }
-
-        .text-right p {
-            margin: 0;
-            font-size: 15px;
-            text-align: right;
-            color: #989898;
-            padding-top: 20px;
-            padding-bottom: 30px;
-
-
-        }
-
-        .text-right>span {
-            display: block;
-            width: 100%;
-            height: 1px;
-            background-color: #dfcd50;
-
-
-        }
-
-        .slide-btn {
-            text-align: right;
-        }
-
-        .slide-btn a {
-            font-size: 13px;
-            text-decoration: none;
-            display: inline-block;
-            padding: 10px 12px;
-            background-color: #dfcd50;
-            color: white;
-
-        }
-
-        /* text block center*/
-        .spacer-100 {
-            height: 100px;
-            width: 100%;
-        }
-
-        .spacer-80 {
-            height: 80px;
-            width: 100%;
-        }
-
-        .spacer-60 {
-            height: 60px;
-            width: 100%;
-        }
-
-        .spacer-50 {
-            height: 50px;
-            width: 100%;
-        }
-
-        .spacer-40 {
-            height: 40px;
-            width: 100%;
-        }
-
-        .spacer-30 {
-            height: 30px;
-            width: 100%;
-        }
-
-        .spacer-20 {
-            height: 20px;
-            width: 100%;
-        }
-
-        .spacer-10 {
-            height: 10px;
-            width: 100%;
-        }
-
-        .spacer-5 {
-            height: 5px;
-            width: 100%;
-        }
-
-        .container {
-            margin: 0 135px;
-            padding: 0 15px;
-        }
-
-        .text-block-center {
-            text-align: center;
-        }
-
-        .text-block-center h2 {
-            font-size: 40px;
-            margin: 0;
-            padding-bottom: 20px;
-        }
-
-        .text-block-center span {
-            margin: auto;
-            text-align: center;
-            display: block;
-            height: 1px;
-            width: 50px;
-            background-color: #dfcd50;
-
-        }
-
-        .wedo {
-            width: 50%;
-            margin: auto;
-        }
-
-        .wedo p {
-            color: #989898;
-            font-size: 15px;
-            line-height: 24px;
-        }
-
-        .row {
-            display: flex;
-            margin-right: -15px;
-            margin-left: -15px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-
-        }
-
-        .row-1 {
-            min-width: 33.33333%;
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
-
-        .prod-item-img {}
-
-        .prod-item-img a {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 200px;
-            background-color: #dfcd50;
-            margin-bottom: 25px;
-        }
-
-        .prod-item-img a:hover {
-            -ms-transform: scale(0.9);
-            -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-
-            -moz-transition: all 300ms ease-out;
-            -o-transition: all 300ms ease-out;
-            -webkit-transition: all 300ms ease-out;
-            transition: all 300ms ease-out;
-            -ms-transition: all 300ms ease-out;
-        }
-
-        .prod-item-img a img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .article a {
-            display: block;
-            text-decoration: none;
-            color: #222;
-            font-size: 24px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-
-
-        }
-
-        .line {
-            width: 15px;
-            height: 1px;
-            display: inline-block;
-            background-color: #dfcd50;
-        }
-
-        .article ul {
-            margin: 0 0 40 0;
-            margin-bottom: 40px;
-
-            padding: 0;
-        }
-
-        .article ul li {
-            line-height: 32px;
-            position: relative;
-            padding-left: 25px;
-            font-size: 13px;
-            color: #989898;
-        }
-
-        .article ul li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 15px;
-            height: 1px;
-            background-color: #dfcd50;
-
-        }
-
-        .container-full-screen {
-            position: relative;
-            width: 100%;
-        }
-
-        .bg-text-image {
-            display: flex;
-        }
-
-        .bg-text-left {
-            text-align: center;
-            padding: 0 15px;
-
-        }
-
-        .bg-text-left div a h5:hover {
-            color: #dfcd50;
-            transition: all 300ms ease-out;
-        }
-
-        .bg-article h3 {
-            font-size: 28px;
-            line-height: 28px;
-
-            color: white;
-
-        }
-
-        .bg-article p {
-            font-size: 13px;
-            line-height: 24px;
-            color: rgba(255, 255, 255, 0.7);
-
-        }
-
-        .bg-article2 h5 {
-            font-size: 16px;
-            line-height: 40px;
-
-            color: white;
-
-        }
-
-        .bg-article2 p {
-            font-size: 13px;
-            line-height: 24px;
-            color: rgba(255, 255, 255, 0.7);
-
-        }
-
-        .bg-fix {
-            z-index: -1;
-            position: absolute;
-            background-attachment: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-position: 50% 50%;
-
-        }
-
-        .blur {
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
+        @media only screen and (max-width: 400px) {}
     </style>
-
 </head>
-<!-- Header-->
 
 <body>
-    <header class="header-style-desktop">
-        <div class="header-container">
-            <div class="header-container-menu">
-                <!-- logo -->
-                <div class="header-logo">
-                    <div class="header-logo-img">
-                        <img src="http://unionagency.one/bristol/img/logo.png" alt="">
-
-                    </div>
-                </div>
-
-                <!-- menu -->
-                <div class="header-nav-container">
-                    <div class="header-menu" id="menu">
-                        <ul class="header-menu " id="menu-nav">
-                            <li class="head-menu active"><a href="index.html"><span>Home</span></a></li>
-                            <li class="head-menu"><a href="about.html"><span>About us</span></a></li>
-                            <li class="head-menu"><a href="service.html"><span>Services</span></a></li>
-                            <li class="head-menu">
-                                <a href="portfolio.html"><span>Portfolio</span></a>
-                                <span></span>
-                                <ul>
-                                    <li><a href="portfolio.html">Portfolio 1</a></li>
-                                    <li><a href="portfolio_full.html">Portfolio 2</a></li>
-                                    <li><a href="detail.html">Portfolio detail</a></li>
-                                </ul>
-                            </li>
-                            <li class="head-menu">
-                                <a href="blog.html"><span>Blog</span></a>
-                                <span></span>
-                                <ul>
-                                    <li><a href="post.html">Blog post</a></li>
-                                </ul>
-                            </li>
-                            <li class="head-menu">
-                                <a href="shop.html"><span>Products</span></a>
-                                <span></span>
-                                <ul>
-                                    <li><a href="shop.html">Products 1</a></li>
-                                    <li><a href="shop2.html">Products 2</a></li>
-                                    <li><a href="shop3.html">Products 3</a></li>
-                                    <li><a href="shopdetail.html">Detail products</a></li>
-                                </ul>
-                            </li>
-                            <li class="head-menu"><a href="checkout.html"><span>Checkout</span></a></li>
-                            <li class="head-menu"><a href="contact.html"><span>Contact us</span></a></li>
-                        </ul>
-
-
-                    </div>
-                    <!-- basket -->
-                    <div class="header-basket" id="basket">
-                        <div class="header-basket-container">
-                            <div class="header-basket-img">
-                                <span>1</span>
-                            </div>
-                            <div class="header-basket-total">
-                                <p>total:<span>149.95$</span></p>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <!-- login -->
-                    <div class="header-login" id="login">
-                        <div class="header-login-container">
-                            <div> <span>Log in &#47; Sing up</span> </div>
-
-                        </div>
-                    </div>
-                    <!-- icon -->
-                    <div class="header-icon">
-                        <div class="icon-container">
-                            <div class="icon-1 open-icon-1" id="icon">
-                                <span class="line-1"></span>
-                                <span class="line-2"></span>
-                                <span class="line-3"></span>
-
-                            </div>
-                        </div>
-
-
-
-
-                    </div>
-
-                </div>
-            </div>
-
-
-        </div>
-    </header>
-    <section class="slides-block">
-        <div class="slide-control">
-            <div class="control">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-        <div class="holder">
-            <div class="wrap active1">
-                <div class="slide active">
-
-                    <div class="swiper-container">
-                        <div class="banner-container">
-                            <div class="banner">
-                                <div class="block-based-text">
-                                    <div class="text-right">
-                                        <h1>Design Interior</h1>
-                                        <span></span>
-                                        <p>
-                                            Curabitur ultricies semper eleifend. Pellentesque molestie purus non
-                                            something
-                                            else
-                                            not
-                                            tempus bibendum mattis making
-                                            something
-                                        </p>
-                                        <div class="slide-btn">
-                                            <a href="">
-                                                <span>VIEW MORE</span>
-                                            </a>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="block-based-images">
-                                    <div class="banner-img-item-1">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-1.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-2">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-2.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-3">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-3.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-4">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-4.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-5">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-5.jpg" alt="">
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="slide">
-
-                    <div class="swiper-container">
-                        <div class="banner-container">
-                            <div class="banner">
-                                <div class="block-based-text">
-                                    <div class="text-right">
-                                        <h1>Design Interior</h1>
-                                        <span></span>
-                                        <p>
-                                            Curabitur ultricies semper eleifend. Pellentesque molestie purus non
-                                            something
-                                            else
-                                            not
-                                            tempus bibendum mattis making
-                                            something
-                                        </p>
-                                        <div class="slide-btn">
-                                            <a href="">
-                                                <span>VIEW MORE</span>
-                                            </a>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="block-based-images">
-                                    <div class="banner-img-item-1">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-1.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-2">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-2.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-3">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-3.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-4">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-4.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-5">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-5.jpg" alt="">
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="slide">
-
-                    <div class="swiper-container">
-                        <div class="banner-container">
-                            <div class="banner">
-                                <div class="block-based-text">
-                                    <div class="text-right">
-                                        <h1>Design Interior</h1>
-                                        <span></span>
-                                        <p>
-                                            Curabitur ultricies semper eleifend. Pellentesque molestie purus non
-                                            something
-                                            else
-                                            not
-                                            tempus bibendum mattis making
-                                            something
-                                        </p>
-                                        <div class="slide-btn">
-                                            <a href="">
-                                                <span>VIEW MORE</span>
-                                            </a>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="block-based-images">
-                                    <div class="banner-img-item-1">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-1.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-2">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-2.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-3">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-3.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-4">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-4.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-5">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-5.jpg" alt="">
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="slide">
-
-                    <div class="swiper-container">
-                        <div class="banner-container">
-                            <div class="banner">
-                                <div class="block-based-text">
-                                    <div class="text-right">
-                                        <h1>Design Interior</h1>
-                                        <span></span>
-                                        <p>
-                                            Curabitur ultricies semper eleifend. Pellentesque molestie purus non
-                                            something
-                                            else
-                                            not
-                                            tempus bibendum mattis making
-                                            something
-                                        </p>
-                                        <div class="slide-btn">
-                                            <a href="">
-                                                <span>VIEW MORE</span>
-                                            </a>
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="block-based-images">
-                                    <div class="banner-img-item-1">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-1.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-2">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-2.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-3">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-3.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-4">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-4.jpg" alt="">
-
-                                    </div>
-                                    <div class="banner-img-item-5">
-                                        <img src="http://unionagency.one/bristol/img/banner-img-5.jpg" alt="">
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-    </section>
-    <!--spacer-100-->
-    <div class="spacer-100"></div>
-    <!-- TEXT BNLOCK CENTER-->
-    <div class="container">
-        <!-- what we do-->
-        <div class="text-block-center">
-            <h2>What we do</h2>
-            <span></span>
-            <div class="wedo">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit cras elementum id metus ac tempus something
-                    posuere</p>
-            </div>
-        </div>
-        <!-- what we do-->
-        <!--spacer-60-->
-        <div class="spacer-60"></div>
-        <div class="row">
-            <div class="row-1">
-                <div class="col-1">
-                    <div class="prod-item-img">
-                        <a href=""><img src="http://unionagency.one/bristol/img/icon-3.png" alt=""></a>
-
-                    </div>
-                    <div class="article">
-                        <a class="h4" href="">Curabitur fermentum</a>
-                        <ul>
-                            <li>Quisque with placerat Porttitor nisi felis</li>
-                            <li>Congue in & Tempus anything the best efficitur</li>
-                            <li>Aenean suscipit vestibulum blandit making</li>
-                        </ul>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-            <div class="row-1">
-                <div class="col-1">
-                    <div class="prod-item-img">
-                        <a href=""><img src="http://unionagency.one/bristol/img/icon-4.png" alt=""></a>
-
-                    </div>
-                    <div class="article">
-                        <a class="h4" href="">KITCHEN FURNITURE</a>
-                        <ul>
-                            <li>Aenean suscipit vestibulum blandit making</li>
-                            <li>Quisque with placerat Porttitor nisi felis</li>
-                            <li>Congue in & Tempus anything the best efficitur</li>
-                        </ul>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-            <div class="row-1">
-                <div class="col-1">
-                    <div class="prod-item-img">
-                        <a href=""><img src="http://unionagency.one/bristol/img/icon-5.png" alt=""></a>
-
-                    </div>
-                    <div class="article">
-                        <a class="h4" href="">CHILDREN ROOM</a>
-                        <ul>
-                            <li>Congue in & Tempus anything the best efficitur</li>
-                            <li>Aenean suscipit vestibulum blandit making</li>
-                            <li>Nulla consectetur quam mollis scelerisque</li>
-                        </ul>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-            <div class="row-1">
-                <div class="col-1">
-                    <div class="prod-item-img">
-                        <a href=""><img src="http://unionagency.one/bristol/img/icon-6.png" alt=""></a>
-
-                    </div>
-                    <div class="article">
-                        <a class="h4" href="">ROOM FOR GUEST</a>
-                        <ul>
-                            <li>Congue in & Tempus anything the best efficitur</li>
-                            <li>Aenean suscipit vestibulum blandit making</li>
-                            <li>Nulla consectetur mollis scelerisque</li>
-                        </ul>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-            <div class="row-1">
-                <div class="col-1">
-                    <div class="prod-item-img">
-                        <a href=""><img src="http://unionagency.one/bristol/img/icon-7.png" alt=""></a>
-
-                    </div>
-                    <div class="article">
-                        <a class="h4" href="">MAIN ROOM</a>
-                        <ul>
-                            <li>Quisque with placerat Porttitor nisi felis</li>
-                            <li>Congue in & Tempus anything the best efficitur</li>
-                            <li>Aenean suscipit vestibulum blandit making</li>
-                        </ul>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-            <div class="row-1">
-                <div class="col-1">
-                    <div class="prod-item-img">
-                        <a href=""><img src="http://unionagency.one/bristol/img/icon-8.png" alt=""></a>
-
-                    </div>
-                    <div class="article">
-                        <a class="h4" href="">BEDROOMS</a>
-                        <ul>
-                            <li>Nulla consectetur mollis scelerisque</li>
-                            <li>Congue in & Tempus anything the best efficitur</li>
-                            <li>Quisque with placerat Porttitor nisi felis</li>
-                        </ul>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-
-
-
-
-
-        </div>
-    </div>
-    <!--spacer-100-->
-    <div class="spacer-80"></div>
-
-    <!--get your chance-->
-    <div class="container-full-screen">
-        <div class="bg-content">
-            <div class="bg-fix" style="background-image: url(http://unionagency.one/bristol/img/img-3.jpg);">
-                <div class="blur"></div>
-
-            </div>
-            <!--spacer-100-->
-            <div class="spacer-100"></div>
-            <!--spacer-30-->
-            <div class="spacer-30"></div>
-            <!--container-->
-            <div class="container">
-                <div class="bg-text-image">
-                    <div class="bg-text-left">
-                        <div class="spacer-5"></div>
-                        <div class="bg-article">
-                            <h3>GET YOUR BRILIANT CHANCE</h3>
-                            <div class="spacer-20"></div>
-                            <p>Integer rhoncus nibh id risus lobortis, in ullamcorper erat tristique.
-                                Ut tempus leo sed volutpat congue. Fusce blandit
-                                eros sed lobortis lacinia.ed nulla dolor, tincidunt
-                            </p>
-                        </div>
-                        <div class="spacer-40"></div>
-                        <div class="bg-article2">
-                            <img src="http://unionagency.one/bristol/img/icon-9.png" alt="">
-                            <div class="spacer-5"></div>
-                            <a href="#">
-                                <h5>ADMINISTRATIVE DEPARTMENT</h5>
-                            </a>
-                            <div class="spacer-5"></div>
-
-                            <p>Sed magna metus, placerat sit amet ullamcorper non,
-                                sodales at neque. Sed vel purus sed ipsum auctor vulputate
-                            </p>
-
-                        </div>
-                        <div class="spacer-40"></div>
-                        <div class="bg-article2">
-                            <img src="http://unionagency.one/bristol/img/icon-10.png" alt="">
-                            <div class="spacer-5"></div>
-                            <a href="#">
-                                <h5>ADMINISTRATIVE DEPARTMENT</h5>
-
-                            </a>
-                            <div class="spacer-5"></div>
-
-                            <p>Phasellus viverra, metus vel bibendum sodales, quam ex hendrerit libero,
-                                non molestie justo orci eget sapien
-                            </p>
-
-                        </div>
-                        <div class="spacer-100"></div>
-                        <div class="spacer-30"></div>
-
-
-
-                    </div>
-                    <div class="bg-image-right">
-                        <div class="bg-image">
-                            <img src="https://i.imgur.com/WaWZlUP.jpg" alt="">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-    </div>
-    <div class="spacer-100"></div>
-
-    <div class="container">
-        <div class="text-block-center">
-            <h2>What we made before</h2>
-            <span></span>
-            <div class="spacer-10"></div>
-            <div class="wedo">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit cras elementum id metus ac tempus something
-                    posuere</p>
-            </div>
-        </div>
-        <!-- what we do-->
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        var icon = document.getElementById("icon");
-        var menu = document.getElementById("menu");
-        var basket = document.getElementById("basket");
-        var login = document.getElementById("login");
-        icon.onclick = function () {
-            icon.classList.toggle("open-icon-1");
-            menu.classList.toggle("enhide");
-            basket.classList.toggle("enhide");
-            login.classList.toggle("enhide");
-
-
-        }
-        // slide control
-        const btns = document.querySelectorAll(".dot");
-        const slides = document.querySelectorAll(".slide");
-        const wrap = document.querySelectorAll(".wrap");
-        var sliderNav = function (manual) {
-            btns.forEach((btn) => {
-                btn.classList.remove("active");
-
-            });
-            slides.forEach((slide) => {
-                slide.classList.remove("active");
-            });
-
-            btns[manual].classList.add("active");
-            slides[manual].classList.add("active");
-            wrap[0].classList.remove("active1");
-            wrap[0].classList.remove("active2");
-            wrap[0].classList.remove("active3");
-            wrap[0].classList.remove("active4");
-            wrap[0].classList.add("active" + (manual + 1))
-
-
-        }
-        btns.forEach((btn, i) => {
-            btn.addEventListener("click", () => {
-                sliderNav(i);
-
-            });
-        });
-        slides.forEach((slide, i) => {
-            slide.addEventListener("click", () => {
-                sliderNav(i);
-            });
-        });
-
-
-
-    </script>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed"
+        bgcolor="#3685F1">
+        <tr>
+            <td align="center" valign="top" border="0">
+                <!-- Header-->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#0025A4"
+                    class="w-100p" style="width:700px;border-collapse: collapse;background:#0025A4;">
+                    <tr>
+                        <td border="0" align="center">
+                            <table style="width: 660px;border-collapse: collapse;background:#0025A4;" bgcolor="#0025A4"
+                                width="660" border="0" class="w-92p">
+                                <tr>
+                                    <td style="width:660px;padding: 20px 0 ;background:#0025A4" border="0"
+                                        bgcolor="#3685F1">
+                                        <table style="width: 660px;border-collapse: collapse;background:#0025A4;"
+                                            bgcolor="#0025A4" width="660" border="0" class="w-100p">
+                                            <tr>
+                                                <td width="50%" style="width:50%;" border="0" class="classname">
+                                                    <a href="https://traceacademia.com/">
+                                                        <img width="160" style="width:160px;display: block;" border="0"
+                                                            class="classname"
+                                                            src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/bbf36743-3706-40e4-9dfb-b8caf9d5574a.png"
+                                                            alt="TRACE ACADEMIA" />
+                                                    </a>
+                                                </td>
+                                                <td align="right" width="50%" style="width:50%;" border="0"
+                                                    class="classname">
+                                                    <a href="%%view_email_url%%"
+                                                        style="color:#fff;text-decoration:none!important;text-decoration:none;font-size:12px;font-family:Verdana, Geneva, Tahoma, sans-serif;"
+                                                        target="_blank">
+                                                        <span>View this email on the browser</span>
+                                                    </a>
+
+
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </td>
+                    </tr>
+
+
+                </table>
+                <!-- header end-->
+                <!--hero-->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#3685F1"
+                    style="width:700px;" align="center" class="hero-100p hero-bg">
+                    <tr>
+                        <td style="text-align:center;" border="0" class="w-100p hero-bg"
+                            background="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/a01a3f72-4079-4b7c-a9a5-3e751e2e603a.jpeg"
+                            style="background: url('hello.jpg')">
+                            <!--[if gte mso 9]><v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:700px;height:400px;"><v:fill type="frame" src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/a01a3f72-4079-4b7c-a9a5-3e751e2e603a.jpeg" color="#27374f" /><v:textbox inset="0,0,0,0"><![endif]-->
+                            <table width="700" style="width:700px;border-collapse:collapse" border="0" class="w-100p">
+                                <tr>
+                                    <td width="700" height="" style="width:700px;padding-top:150px;" border="0"
+                                        class="w-100p"></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:700px;" border="0" class="classname">
+                                        <table style="border-collapse:collapse" border="0" class="classname">
+                                            <tr>
+
+                                                <td style="text-align:left; padding:0 20px 0 20px;" align="left"
+                                                    border="0" class="classname">
+                                                    <a style="text-decoration: none; color: #ffffff; font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 28px;font-weight: 900;"
+                                                        href="https://traceacademia.com/">
+                                                        <span>Learn your way.</span>
+                                                    </a>
+                                                    <br>
+                                                    <br>
+                                                    <a style="text-decoration: none; display: block; color: #ffffff; font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 15px;font-weight: 900;"
+                                                        href="https://traceacademia.com/">
+                                                        <span>Learn what you want how you want,<br> with courses as low
+                                                            as $11.99</span>
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="700" height="70" style="width:700px;padding-top: 50px;" border="0"
+                                        class="w-100p"></td>
+                                </tr>
+
+                            </table>
+                            <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
+                        </td>
+                    </tr>
+                </table>
+                <!--hero end-->
+
+                <!--welcome section-->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td style="width: 660px;" width="660" border="0" align="center" class="w-92p">
+                            <table style="width: 660px;border-collapse: collapse;" width="660" border="0"
+                                class="w-100p">
+                                <tr>
+                                    <td style="width: 660px;padding-top:20px;padding-bottom:20px;" class="w-100p"
+                                        width="656" border="0" align="center">
+                                        <table style="width:656px;border-collapse: collapse;" width="656" border="0"
+                                            class="w-92p">
+                                            <tr>
+                                                <td style="text-align:left;padding-bottom:20px;color:#00B4FF;text-decoration:none!important;font-size:18px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight:bold"
+                                                    border="0">
+                                                    Hi Taoufiq Benallah
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;padding-bottom:20px;color:#000000;text-decoration:none!important;font-size:12px;font-family:Verdana, Geneva, Tahoma, sans-serif;"
+                                                    border="0">
+                                                    Thanks for signing up to keep in touch with TRACE ACADEMIA. <br>
+                                                    First of all, props on downloading the Trace Academia app. We just
+                                                    know that you're
+                                                    going to
+                                                    love the courses and certificates we’ve created for you, no matter
+                                                    which one you
+                                                    complete
+                                                    first.
+                                                    <br>
+                                                    <br>
+                                                    So, what's the hold-up? We’ve noticed that you haven't started a
+                                                    certificate yet. In
+                                                    case you
+                                                    forgot, it's all free, so you don't have to worry about how much
+                                                    it's going to cost
+                                                    you. Why
+                                                    not start with the following popular courses?
+                                                    <br class="em_hide_1"> to Mastering Business Skills or Own Your
+                                                    Situation with
+                                                    Durex, they are
+                                                    all free so Sky's the limit!
+                                                    <br>
+                                                    <br>
+                                                    How to Become a Marketing Cloud Email Specialist
+                                                    <br>
+                                                    Get Started with Digital Marketing
+                                                    <br>
+                                                    Become a Successful Entrepreneur brands.
+                                                    <br>
+                                                    <br>
+                                                    All you need is an internet connection and a thirst for something
+                                                    new. Think about
+                                                    it — where
+                                                    else can you go to learn something new, have fun and get certified
+                                                    without paying a
+                                                    cent?
+                                                    Stick with Trace Academia and you'll be flashing a certificate in no
+                                                    time
+                                                    at&nbsp;all.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <!-- btn -->
+                                                    <table border="0" cellspacing="0" cellpadding="0" bgcolor="#ea6c13"
+                                                        style="border:1px solid #ffffff; display:inline-block;background-color: #ea6c13; border-radius:25px;">
+                                                        <tr>
+                                                            <td width="30"></td>
+                                                            <td height="40" valign="middle" align="center"
+                                                                style="font-family:Arial, Helvetica, sans-serif; height:40px;">
+                                                                <a href="www.goole.com" class="" target="_blank"
+                                                                    style="font-family:Verdana, Geneva, Tahoma, sans-serif!important; color:#ffffff; font-size:14px; line-height:15px; font-weight:400; display:inline-block; padding: 11px 0px 13px 0px; text-decoration:none; text-transform:uppercase;">
+                                                                    START COURSE NOW
+                                                                </a>
+                                                            </td>
+                                                            <td width="30"></td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- /btn -->
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!--welcome section-->
+                <!--Products-->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#FFFFFF"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td border="0" align="center" class="d-92p">
+                            <table style="width: 660px;border-collapse: collapse;" width="660" border="0" class="w-92p">
+                                <tr>
+                                    <td style="padding-bottom:20px;padding-top:20px" border="0" class="w-100p">
+                                        <table style="width:660px;height:20px;border-collapse: collapse;" width="660"
+                                            class="w-100p" height="20" border="0">
+                                            <tr>
+                                                <td style="text-align:left;color:#fff;" border="0">
+
+
+                                                    <span
+                                                        style="color:#00B4FF;text-decoration:none!important;text-decoration:none;font-size:20px;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                                        Popular Courses
+                                                    </span>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!--Image on the left -->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td border="0" align="center" style="padding: 20px 0;">
+                            <table style="width: 660px;border-collapse: collapse;" width="660" border="0" class="w-92p">
+                                <tr border="0">
+                                    <td border="0" align="center">
+                                        <table valign="top" align="left" style="width: 320px;border-collapse: collapse;"
+                                            width="320" border="0" class="mobile-resp">
+                                            <tr>
+                                                <td border="0" class="w-100p">
+                                                    <img src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/5de99ee9-6580-405f-8c55-11f8baafa9a8.jpeg"
+                                                        alt="Product" style="width: 308px; padding: 0;display: block;"
+                                                        width="308" border="0" class="w-100p">
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table valign="top" align="right"
+                                            style="width: 320px;border-collapse: collapse; display: inline-block;"
+                                            width="320" border="0" class="mobile-resp">
+                                            <tr>
+                                                <td border="0" class="w-100p">
+                                                    <table align="center" border="0" style="border-collapse: collapse;">
+                                                        <tr>
+                                                            <td style="text-align:left;background:#ffffff;color:#fff;padding-bottom:20px"
+                                                                border="0">
+                                                                <a href=""
+                                                                    style="color:#00B4FF;text-decoration:none!important;text-decoration:none;font-size:20px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight:bold;">
+                                                                    <span>Best JavaScript Online Courses.</span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align:left;color:#fff;background:#ffffff;padding-bottom:20px"
+                                                                border="0">
+                                                                <a href=""
+                                                                    style="color:#000000;text-decoration:none!important;text-decoration:none;font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                                                    <span>
+                                                                        dolor sit amet consectetur, adipisicing elit.
+                                                                        Ipsam dolorum architecto aperiam quibusdam
+                                                                        beatae ad
+                                                                        ullam laudantium
+                                                                        veritatis perferendis blanditiis laudantium
+                                                                        veritatis perferendis
+                                                                    </span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <!-- btn -->
+                                                                <table border="0" cellspacing="0" cellpadding="0"
+                                                                    bgcolor="#ea6c13" valign="top" align="center"
+                                                                    style="border:1px solid #ffffff;background-color: #ea6c13; border-radius:100px;">
+                                                                    <tr>
+
+                                                                        <td valign="middle" align="center"
+                                                                            style="font-family:Arial, Helvetica, sans-serif;padding:10px 34px;">
+                                                                            <a href="www.goole.com" class=""
+                                                                                target="_blank"
+                                                                                style="font-family:Verdana, Geneva, Tahoma, sans-serif!important; color:#ffffff; font-size:14px; line-height:15px; font-weight:400; display:inline-block;text-decoration:none; text-transform:uppercase;">
+                                                                                START COURSES
+                                                                            </a>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </table>
+                                                                <!-- /btn -->
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+
+                </table>
+                <!--Image on the right -->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td border="0" align="center" style="padding: 20px 0;">
+                            <table style="width: 660px;border-collapse: collapse;" width="660" border="0" class="w-92p">
+                                <tr border="0">
+                                    <td border="0" align="center" class="dir">
+                                        <table valign="top" align="right"
+                                            style="width: 320px;border-collapse: collapse;" width="320" border="0"
+                                            class="mobile-resp ">
+                                            <tr>
+                                                <td border="0" class="w-100p">
+                                                    <img src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/7fa47dd7-8ee3-47f2-b2ba-4acad19a69a8.jpeg"
+                                                        alt="Product" style="width: 308px; padding: 0;display: block;"
+                                                        width="308" border="0" class="w-100p">
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table valign="top" align="left"
+                                            style="width: 320px;border-collapse: collapse; display: inline-block;"
+                                            width="320" border="0" class="mobile-resp ">
+                                            <tr>
+                                                <td border="0" class="w-100p">
+                                                    <table align="center" border="0" style="border-collapse: collapse;">
+                                                        <tr>
+                                                            <td style="text-align:left;background:#ffffff;color:#fff;padding-bottom:20px"
+                                                                border="0">
+                                                                <a href=""
+                                                                    style="color:#00B4FF;text-decoration:none!important;text-decoration:none;font-size:20px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight:bold;">
+                                                                    <span>Digital Marketing Guide - 22
+                                                                        Courses in 1.</span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align:left;color:#fff;background:#ffffff;padding-bottom:20px"
+                                                                border="0">
+                                                                <a href=""
+                                                                    style="color:#000000;text-decoration:none!important;text-decoration:none;font-size:16px;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                                                    <span>
+                                                                        dolor sit amet consectetur, adipisicing elit.
+                                                                        Ipsam dolorum architecto aperiam quibusdam
+                                                                        beatae ad
+                                                                        ullam laudantium
+                                                                        veritatis perferendis blanditiis laudantium
+                                                                        veritatis perferendis
+                                                                    </span>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <!-- btn -->
+                                                                <table border="0" cellspacing="0" cellpadding="0"
+                                                                    bgcolor="#ea6c13" valign="top" align="center"
+                                                                    style="border:1px solid #ffffff;background-color: #ea6c13; border-radius:100px;">
+                                                                    <tr>
+
+                                                                        <td valign="middle" align="center"
+                                                                            style="font-family:Arial, Helvetica, sans-serif;padding:10px 34px;">
+                                                                            <a href="www.goole.com" class=""
+                                                                                target="_blank"
+                                                                                style="font-family:Verdana, Geneva, Tahoma, sans-serif!important; color:#ffffff; font-size:14px; line-height:15px; font-weight:400; display:inline-block;text-decoration:none; text-transform:uppercase;">
+                                                                                START COURSES
+                                                                            </a>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </table>
+                                                                <!-- /btn -->
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+
+                </table>
+
+
+                <!--discover our team -->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#ffffff"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td border="0" align="center">
+                            <table style="width: 660px;border-collapse: collapse;" width="660" border="0" class="w-92p">
+                                <tr>
+                                    <td border="0" align="center">
+                                        <img src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/985dfa46-1423-44ff-afbd-5a616bcd2c81.jpeg"
+                                            alt="" class="w-100p" style="width:100%;" width="660">
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                </table>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#FFFFFF"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td border="0" align="center" class="d-92p">
+                            <table style="width: 660px;border-collapse: collapse;" width="660" border="0" class="w-92p">
+                                <tr>
+                                    <td style="padding-bottom:20px;padding-top:20px" border="0" class="w-100p">
+                                        <table style="width:660px;height:20px;border-collapse: collapse;" width="660"
+                                            class="w-100p" height="20" border="0">
+                                            <tr>
+                                                <td style="text-align:left;color:#fff;" border="0">
+
+
+                                                    <span
+                                                        style="color:#00B4FF;text-decoration:none!important;text-decoration:none;font-size:20px;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                                        Discover Our team
+                                                    </span>
+
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;padding:20px 0 ;color:#000000;text-decoration:none!important;font-size:14px;font-family:Verdana, Geneva, Tahoma, sans-serif;"
+                                                    border="0">
+                                                    We've partnered with some of the best teachers to ensure a solid
+                                                    knowledge that will
+                                                    benefit you tomorrow
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td align="center">
+                                                    <!-- btn -->
+                                                    <table border="0" cellspacing="0" cellpadding="0" bgcolor="#ea6c13"
+                                                        style="border:1px solid #ffffff; display:inline-block;background-color: #ea6c13; border-radius:25px;">
+                                                        <tr>
+                                                            <td width="30"></td>
+                                                            <td height="40" valign="middle" align="center"
+                                                                style="font-family:Arial, Helvetica, sans-serif; height:40px;">
+                                                                <a href="www.goole.com" class="" target="_blank"
+                                                                    style="font-family:Verdana, Geneva, Tahoma, sans-serif!important; color:#ffffff; font-size:14px; line-height:15px; font-weight:400; display:inline-block; padding: 11px 0px 13px 0px; text-decoration:none; text-transform:uppercase;">
+                                                                    START COURSE NOW
+                                                                </a>
+                                                            </td>
+                                                            <td width="30"></td>
+                                                        </tr>
+                                                    </table>
+                                                    <!-- /btn -->
+                                                </td>
+
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--Footer-->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" bgcolor="#0025A4"
+                    style="width:700px;border-collapse: collapse;" align="center" class="w-100p">
+                    <tr>
+                        <td align="center" valign="top" border="0">
+                            <table style="width: 660px;border-collapse: collapse;background:#0025A4;" class="w-92p"
+                                bgcolor="#0025A4" width="660" border="0">
+                                <tr>
+                                    <td align="center" valign="top" border="0" style="padding: 20px 0;">
+                                        <table align="left" valign="top" border="0" width="320"
+                                            style="width: 320px;display: inline-block; "
+                                            class="mobile-resp mobile-space">
+                                            <tr align="center" valign="top" border="0">
+                                                <td>
+                                                    <table align="left" valign="top" border="0">
+                                                        <tr>
+                                                            <td border="0">
+                                                                <a style="text-decoration:none;"
+                                                                    href="https://web.facebook.com/traceacademia"
+                                                                    target="_blank"><img width="40" height="40"
+                                                                        style="width:40px; height:40px;display:block;"
+                                                                        src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/cd1acf9a-54bb-4ae8-a769-0230ef85e5ef.png"
+                                                                        alt=""></a>
+                                                            </td>
+                                                            <td width="5" style="width: 5px;"></td>
+                                                            <td border="0">
+                                                                <a style="text-decoration:none;"
+                                                                    href="https://web.facebook.com/traceacademia"
+                                                                    target="_blank"><img width="40" height="40"
+                                                                        style="width:40px; height:40px;display:block;"
+                                                                        src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/158d08a7-55c1-42d0-96c8-16cfc6e36c8a.png"
+                                                                        alt="">
+                                                                </a>
+                                                            </td>
+                                                            <td width="5" style="width: 5px;"></td>
+                                                            <td border="0">
+                                                                <a style="text-decoration:none;"
+                                                                    href="https://web.facebook.com/traceacademia"
+                                                                    target="_blank"><img width="40" height="40"
+                                                                        style="width:40px; height:40px;display:block;"
+                                                                        src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/64ceb0e7-c2c2-4856-a43e-22c089ec1afc.png"
+                                                                        alt="">
+
+                                                                </a>
+                                                            </td>
+                                                            <td width="5" style="width: 5px;"></td>
+                                                            <td border="0">
+                                                                <a style="text-decoration:none;"
+                                                                    href="https://web.facebook.com/traceacademia"
+                                                                    target="_blank"><img width="40" height="40"
+                                                                        style="width:40px; height:40px;display:block;"
+                                                                        src="https://image.s10.sfmc-content.com/lib/fe3e15707564007c761272/m/1/fcb738af-1479-4e2c-9a99-ac222abb7044.png"
+                                                                        alt="">
+                                                                </a>
+                                                            </td>
+
+                                                        </tr>
+
+
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td border="0" style="padding-top: 40px;">
+                                                    <span
+                                                        style="color:#FFFFFF;text-decoration:none!important;text-decoration:none;font-size:14px;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                                                        Don't want to receive these emails anymore? Click <a
+                                                            href="wwww.google.com"
+                                                            style="color:#FFFFFF;font-size:14px;font-family:Verdana, Geneva, Tahoma, sans-serif;"
+                                                            target="_blank">here</a>
+                                                        to unsubscribe.<br> Trace Academia © Copyright 2022 | All rights
+                                                        reserved.
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+
+                                        <table align="right" valign="top" border="0" width="320" style="width: 320px;"
+                                            class="mobile-resp space-h-40">
+                                            <tr align="right" valign="top" border="0">
+                                                <td align="right" valign="top" border="0">
+                                                    <table align="right" valign="top" border="0">
+                                                        <tr>
+                                                            <td border="0">
+                                                                <a style="text-decoration:none;"
+                                                                    href="https://traceacademia.onelink.me/TPqP/b84xtk2k?utm_source=email&utm_medium=email&utm_campaign=traceacademia_global"
+                                                                    target="_blank"><img width=" 120" height="40"
+                                                                        style="width:120px;height:40px;display:block;"
+                                                                        src="https://image.content.trace.tv/lib/fe3b11717564047e771c71/m/1/e525c1c4-abdd-47c3-9779-066235f40aca.png"
+                                                                        alt=""></a>
+                                                            </td>
+                                                            <td align="right" style="border-collapse:collapse"
+                                                                border="0">
+                                                                <a style="text-decoration:none;"
+                                                                    href="https://traceacademia.onelink.me/TPqP/b84xtk2k?utm_source=email&utm_medium=email&utm_campaign=traceacademia_global"
+                                                                    target="_blank"><img width="120" height="40"
+                                                                        style="width:120px;height:40px;display:block;"
+                                                                        src="https://image.content.trace.tv/lib/fe3b11717564047e771c71/m/1/1618ca0f-8c07-4f34-884f-da8c80f4c347.png"
+                                                                        alt=""> </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-bottom: 40px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="em_hide">
+
+                                                            </td>
+                                                            <td align="right" valign="top">
+
+                                                                <a href="https://traceacademia.com/" target="_blank">
+                                                                    <img width="100" height="50" style="width:100px;"
+                                                                        border="0"
+                                                                        src="https://image.content.trace.tv/lib/fe3b11717564047e771c71/m/1/ebcdc2b1-5fec-49a6-b854-ab166f10dcbf.png"
+                                                                        alt="TRACE ACADEMIA" />
+                                                                </a>
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </table>
+
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </td>
+        </tr>
+    </table>
 
 
 </body>
+
+
+
 
 </html>
